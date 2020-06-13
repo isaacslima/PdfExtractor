@@ -9,6 +9,8 @@ namespace PdfExtractor
 {
     public partial class Form1 : Form
     {
+        PdfDocument _pdfDocument;
+
         public Form1()
         {
             InitializeComponent();
@@ -16,7 +18,12 @@ namespace PdfExtractor
 
         private void btnSelecionarArquivo_Click(object sender, EventArgs e)
         {
+            openFileDialog.ShowDialog();
+            var caminhoArquivo = openFileDialog.FileName;
+            lblArquivoSelecionado.Text = caminhoArquivo;
 
+            _pdfDocument = new PdfDocument(new PdfWriter(new FileStream(caminhoArquivo, FileMode.Open, FileAccess.ReadWrite)));
+            Document document = new Document(_pdfDocument);
         }
     }
 }
