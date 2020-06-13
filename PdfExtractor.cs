@@ -7,11 +7,11 @@ using System.Windows.Forms;
 
 namespace PdfExtractor
 {
-    public partial class Form1 : Form
+    public partial class PdfExtractor : Form
     {
         PdfDocument _pdfDocument;
 
-        public Form1()
+        public PdfExtractor()
         {
             InitializeComponent();
         }

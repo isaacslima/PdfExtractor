@@ -1,6 +1,6 @@
 ﻿namespace PdfExtractor
 {
-    partial class Form1
+    partial class PdfExtractor
     {
         /// <summary>
         /// Required designer variable.
