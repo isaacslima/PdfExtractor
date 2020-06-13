@@ -1,8 +1,5 @@
 ﻿using System;
-using System.IO;
 using iText.Kernel.Pdf;
-using iText.Layout;
-using iText.Layout.Element;
 using System.Windows.Forms;
 using iText.Kernel.Pdf.Canvas.Parser.Listener;
 using iText.Kernel.Pdf.Canvas.Parser;
@@ -13,7 +10,6 @@ namespace PdfExtractor
     public partial class PdfExtractor : Form
     {
         PdfDocument _pdfDocument;
-        public static readonly String DEST = "czech.txt";
 
         public PdfExtractor()
         {
@@ -30,13 +26,17 @@ namespace PdfExtractor
 
             LocationTextExtractionStrategy strategy = new LocationTextExtractionStrategy();
 
-            PdfCanvasProcessor parser = new PdfCanvasProcessor(strategy);
-            parser.ProcessPageContent(_pdfDocument.GetFirstPage());
+            var numberOfPages = _pdfDocument.GetNumberOfPages();
 
-            byte[] array = Encoding.UTF8.GetBytes(strategy.GetResultantText());
-            using (FileStream stream = new FileStream(DEST, FileMode.Create))
+            for (var i = 1; i <= numberOfPages; i++)
             {
-                stream.Write(array, 0, array.Length);
+                PdfCanvasProcessor parser = new PdfCanvasProcessor(strategy);
+                parser.ProcessPageContent(_pdfDocument.GetPage(i));
+
+                byte[] array = Encoding.Default.GetBytes(strategy.GetResultantText());
+
+
+                var str = Encoding.Default.GetString(array);
             }
 
             _pdfDocument.Close();
