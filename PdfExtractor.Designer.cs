@@ -100,7 +100,7 @@
             // 
             this.pbLanguageSelected.BackColor = System.Drawing.SystemColors.MenuBar;
             this.pbLanguageSelected.Image = global::PdfExtractor.Properties.Resources.portuguese;
-            this.pbLanguageSelected.Location = new System.Drawing.Point(544, 10);
+            this.pbLanguageSelected.Location = new System.Drawing.Point(549, 10);
             this.pbLanguageSelected.Name = "pbLanguageSelected";
             this.pbLanguageSelected.Padding = new System.Windows.Forms.Padding(5);
             this.pbLanguageSelected.Size = new System.Drawing.Size(37, 34);
@@ -113,7 +113,7 @@
             this.pnlMultilanguage.BackColor = System.Drawing.SystemColors.MenuBar;
             this.pnlMultilanguage.Controls.Add(this.panel3);
             this.pnlMultilanguage.Controls.Add(this.panel2);
-            this.pnlMultilanguage.Location = new System.Drawing.Point(381, 44);
+            this.pnlMultilanguage.Location = new System.Drawing.Point(386, 44);
             this.pnlMultilanguage.Name = "pnlMultilanguage";
             this.pnlMultilanguage.Size = new System.Drawing.Size(200, 81);
             this.pnlMultilanguage.TabIndex = 6;
